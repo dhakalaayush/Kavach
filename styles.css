@@ -91,7 +91,7 @@ section {
 }
 
 .section_text{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
 }
@@ -209,7 +209,7 @@ footer {
 
 /* List Styling */
 .have_you ul {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     list-style: none;
     padding: 0;
@@ -345,7 +345,7 @@ footer {
     color:white;
 }
 .email_text p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3rem;
     color: white;
 }
@@ -474,7 +474,7 @@ footer {
 
 /* List Styling */
 .rooms ul, .rooms p, .learn_section_container p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.4rem;
     text-align: left;
     padding-left: 1.5rem;
@@ -585,14 +585,14 @@ footer {
     margin-right: auto;
 }
 .blogs_content h3{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
     margin-right: auto;
 }
 
 .blogs_content p, .blogs_content ul, .blogs_content ol, .blogs_content table{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
     margin-right: auto;
@@ -753,7 +753,7 @@ footer {
 }
 
 .privacy_policy p, .privacy_policy ul{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
 }
@@ -774,7 +774,7 @@ footer {
     width: 40%;
     padding: 3%;
     line-height: 150%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
 }
@@ -794,7 +794,7 @@ footer {
 .contact table
 {
     width: 100%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     font-size: x-large;
 }
