@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Simulator</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../pictures/Kavach_logo.png">
+
+    <style>
+        .phishing_simulator_container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .email-box, .popup-box, .login-page {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .fake-input {
+            width: 100;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .phishing-button, .login-button, .next-button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .phishing-button {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .login-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .next-button {
+            background-color: #9742ff;
+            color: white;
+            float: right;
+        }
+
+        .correct {
+            color: #4CAF50;
+            font-weight: bold;
+            padding: 10px;
+            background: #f8fff8;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .incorrect {
+            color: #F44336;
+            font-weight: bold;
+            padding: 10px;
+            background: #fff8f8;
+            border-left: 4px solid #F44336;
+        }
+
+        .progress-indicator {
+            text-align: right;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .simulator_image {
+            max-width: 100;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="phishing_simulator_container">
+    <div id="progress" class="progress-indicator"></div>
+    <div id="simulationArea"></div>
+    <div id="remarkHTML"></div>
+    <button class="next-button" id="nextButton" onclick="nextScenario()" disabled>Next</button>
+</div>
+
+<script>
+const scenarios = [
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_1.png" class="simulator_image">',
+        isPhishing: false,
+        feedback: "This was a legitimate email. Always verify the sender and domain."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_2.png" class="simulator_image">',
+        isPhishing: true,
+        feedback: "This is a phishing email. Verify the sender name and address properly."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_3.png" class="simulator_image">',
+        isPhishing: true,
+        feedback: "This is a phishing email. Verify the sender name and address properly."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_4.png" class="simulator_image">',
+        isPhishing: true,
+        feedback: "This is a phishing email. Verify the link by hovering on it to see where it leads."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_5.png" class="simulator_image">',
+        isPhishing: true,
+        feedback: "This is a phishing email. Verify the link by hovering on it to see where it leads."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_6.png" class="simulator_image">',
+        isPhishing: true,
+        feedback: "This is a phishing email. Verify the sender and beware of scams."
+    },
+    {
+        type: "email",
+        content: '<img src="../../pictures/phishing_simulator_7.png" class="simulator_image">',
+        isPhishing: false,
+        feedback: "This is a legitimate email. Always verify the sender and link."
+    }
+];
+
+let currentScenario = 0;
+let score = 0;
+
+function displayScenario() {
+    const scenario = scenarios[currentScenario];
+    document.getElementById("progress").innerText =
+        `${currentScenario + 1}/${scenarios.length}`;
+
+    let html = "";
+
+    if (scenario.type === "email") {
+        html = `
+            <div class="email-box">
+                ${scenario.content}
+            </div>
+        `;
+
+
+        html += `
+            <button class="phishing-button" id="phishingBtn" onclick="markAsPhishing()">Phishing</button>
+            <button class="login-button" id="legitBtn" onclick="markAsLegitimate()">Legitimate</button>
+        `;
+
+    }
+
+    document.getElementById("simulationArea").innerHTML = html;
+    document.getElementById("remarkHTML").innerHTML = "";
+    document.getElementById("nextButton").disabled = true;
+}
+
+function markAsPhishing() {
+    const scenario = scenarios[currentScenario];
+
+    if (scenario.isPhishing) {
+        document.getElementById("remarkHTML").innerHTML =
+            `<div class="correct">✅ Correct! ${scenario.feedback}</div>`;
+        score++;
+    } else {
+        document.getElementById("remarkHTML").innerHTML =
+            `<div class="incorrect">❌ Incorrect! ${scenario.feedback}</div>`;
+    }
+
+    disableButtons();
+}
+
+function markAsLegitimate() {
+    const scenario = scenarios[currentScenario];
+
+    if (!scenario.isPhishing) {
+        document.getElementById("remarkHTML").innerHTML =
+            `<div class="correct">✅ Correct! ${scenario.feedback}</div>`;
+        score++;
+    } else {
+        document.getElementById("remarkHTML").innerHTML =
+            `<div class="incorrect">❌ Incorrect! ${scenario.feedback}</div>`;
+    }
+
+    disableButtons();
+}
+
+function disableButtons() {
+    const p = document.getElementById("phishingBtn");
+    const l = document.getElementById("legitBtn");
+    if (p) p.disabled = true;
+    if (l) l.disabled = true;
+    document.getElementById("nextButton").disabled = false;
+}
+
+function nextScenario() {
+    currentScenario++;
+    if (currentScenario < scenarios.length) {
+        displayScenario();
+    } else {
+        showScore();
+    }
+}
+
+function showScore() {
+    document.getElementById("simulationArea").innerHTML = `
+        <div class="email-box">
+            <h3>Your Score: ${score} / ${scenarios.length}</h3>
+        </div>
+    `;
+    document.getElementById("remarkHTML").innerHTML = "";
+    document.getElementById("nextButton").innerHTML = "Return to Homepage";
+    document.getElementById("nextButton").addEventListener("click",function(){
+        window.location.href = "../../index.html"
+    })
+}
+
+displayScenario();
+</script>
+</body>
+</html>

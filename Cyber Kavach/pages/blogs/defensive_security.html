@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Defensive Security</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../pictures/Kavach_logo.png">
+</head>
+
+<body>
+    <div class="blogs_content">
+        <h1>Defensive Security</h1>
+
+        <img src="../../pictures/defense_in_depth.jpg" alt="CCTV as a sign of security">
+
+        <h3>Defense-in-depth</h3>
+
+        <p>Defense in depth is a cybersecurity concept which means multiple layers of cybersecurity. It involves
+            applying security
+            protocols at multiple layers around an IT infrastructure. The objective of defense in depth is to ensure
+            that if one of
+            the protocol or measure fails, there are still other ones to compliment. A real-life analogy would be a
+            castle. There
+            would be a king sleeping in a room within the castle. To protect him, there is a secure room with guards on
+            the door.
+            The room would be within a building with strong brick-walls. The main door of the building will have locks
+            and also
+            guarded by guards. The building will be surrounded by fence and there will be guards in the entrance there
+            too. There
+            will also be watch gates and other security measures. Defense in depth has similar concept. It has different
+            tools and
+            techniques covering network, application, endpoint and even social aspects.</p>
+
+        <img src="../../pictures/defense_in_depth_figure.png" alt="Defense in Depth">
+
+        <p><b>Attack Surface:</b> The target in a cyber-attack is called attack surface. It is the things that are
+            vulnerable to
+            cyber-attack. For example, company website, employee portal, email accounts, passwords, etc. These are the
+            possible
+            vectors from which an adversary can extract information. The attack surface covers defense points like data,
+            devices,
+            applications, networks and systems. Attack surface is critical in cybersecurity because it identifies the
+            possible
+            points of cyber-attack in an organization.</p>
+
+
+        <h2>Methods of technical defense</h2>
+
+
+        <h3>Anti-malware</h3>
+        <p>It is the software that can protect a computer system against malwares. Malwares have signature which are its
+            unique
+            features like its file size, file type, extension, data usage pattern, methods of operation, etc. An
+            anti-malware
+            software can detect this pattern and recognize malware. Then, it moves the malicious file to a location
+            where it cannot
+            execute and is basically not functional at all. It then notifies the user and takes action.</p>
+
+        <h3>IDS and IPS</h3>
+        <p>IDS (Intrusion Detection System) detects any malicious activity in a system or network, and alerts. It
+            doesn’t affect
+            network performance.
+            IPS (Intrusion Prevention System) detects and also performs actions to prevent such malicious activity. It
+            affects
+            network performance as there will be delay in IPS processing.
+
+        <h3>Firewall</h3>
+        <p>Firewalls are located at the edge of a network. Its job is to filter incoming and outgoing network traffic.
+            At early
+            times, firewalls used to filter data packets. So, it could not protect against data spoofing. Firewalls can
+            also include
+            IDS and IPS. A firewall may be software or hardware and can be placed in different ways.</p>
+        <img src="../../pictures/firewall.png" alt="Firewall">
+        <ul>
+            <li><b>Network firewalls:</b> They are placed between a computer system or a network, and the internet. They
+                protect the entire
+                system or the network.</li>
+            <li><b>Host-based firewalls:</b> They are placed in hosts, i.e. endpoints (computer, mobile devices, etc.).
+                They protect the
+                specific endpoint they are placed on.</li>
+            <li><b>Cloud-based firewalls:</b> They are the firewalls offered as a service by Cloud Service Providers.
+                So, they are also known
+                as Firewall-as-a-Service (FaaS). Instead of being a hardware or software, they are hosted on cloud. The
+                benefits of
+                using cloud firewall is that it is scalable according to the organization needs, accessible from
+                anywhere and doesn’t
+                require maintenance costs.</li>
+        </ul>
+        <p>On the basis of filtering methods, firewalls are of different types:</p>
+        <ul>
+            <li><b>Packet Filtering firewalls:</b> These firewalls have some pre-defined rules. They check each data
+                packet’s header (source
+                IP, destination IP, port, protocol, etc) and based on the rules they allow and block those packets.
+                They are fast but
+                cannot detect malicious payload.</li>
+            <li><b>Stateful Inspection firewalls:</b> While packet filtering firewalls inspect each data packet,
+                these
+                firewalls check active
+                connections and allow or block packets based on the context. It is more secure than a packet
+                filtering firewall.</li>
+            <li><b>Proxy firewalls:</b> They are located in the application layer and act as an intermediary between
+                user
+                device and the
+                internet. As HTTP is an application-level protocol and is insecure, it is the job of proxy firewalls
+                to filter the HTTP
+                traffic.</li>
+            <li><b>Next Generation Firewall:</b> It is an advanced firewall which is the combination of other
+                firewalls. It
+                can have multiple
+                features like packet filtering, stateful inspection, protecting application layers, detecting and
+                preventing intrusions,
+                etc. It provides high security but is costly.</li>
+
+        </ul>
+
+        <h3>Encryption and Cryptography</h3>
+        <p>Cryptography is the process of translating information into secure format. It is the art of creating codes
+            using
+            encryption and decryption. Encryption is a part of cryptography. It is the process where information is
+            hidden using
+            certain algorithms.</p>
+
+        <table>
+            <tr>
+                <th>Cryptography</th>
+                <th>Encryption</th>
+            </tr>
+            <tr>
+                <td>It secures data using mathematical techniques.</td>
+                <td>It converts data into unreadable format.</td>
+            </tr>
+            <tr>
+                <td>It is a broader concept.</td>
+                <td>It falls under cryptography.</td>
+            </tr>
+            <tr>
+                <td>It ensures confidentiality and integrity of information.</td>
+                <td>It ensures confidentiality of information.</td>
+            </tr>
+            <tr>
+                <td>Encrpytion, hasing, digital signatures, etc. fall under cryptography.</td>
+                <td>There are two types of encryption, Symmetric (example, AES) and Unsymmetric (example, RSA).</td>
+            </tr>
+            <tr>
+                <td>Examples, SSL/TLS, Blockchain.</td>
+                <td>Example, File encryption using AES.</td>
+            </tr>
+        </table>
+
+        <h3>Proxy servers</h3>
+        <p>Proxy servers are the middle-man between the computer and the internet. When a computer makes a request, the
+            proxy sends
+            the request to the internet, and when the internet sends back a response, the proxy sends it to the device.
+            A proxy has
+            security features as well. It hides the original IP address of the device masking with the proxy IP address.
+            It also
+            prevents direct access to the internet thus making it difficult for the attacker to gain access to the
+            device.
+        </p>
+        <img src="../../pictures/proxy.png" alt="Proxy">
+
+        <h3>EDR (Endpoint Detection and Response)</h3>
+        <p>EDR is a tool that monitors endpoints (computer, mobile phones, servers, etc.) for any cyber threats and
+            responds to
+            those threats. It detects any abnormal behavior in those endpoints. It also responds to those threats in
+            various ways,
+            such as isolating the system after a threat is detected. An antimalware is signature-based but an EDR is
+            behavioral-based, so it is more effective than antimalware in detecting advanced cyber threats.</p>
+
+        <h3>Identity and Access Control</h3>
+
+        <p>It is a cybersecurity framework that is designed to ensure only the authorized people can access system and
+            data in an
+            organization. It ensures that authorized people can access authorized resources at authorized time.</p>
+
+        <p>Access Control has four key mechanisms (IAAA):</p>
+
+        <ol>
+            <li>Identification: It refers to proving identity. It proves the user of the system. For example, typing
+                username or ID card
+                to access a system.</li>
+            <li>Authentication: It involves verifying the identity. The main objective of authentication is to prove
+                that the user
+                proving the identity is valid. There are various authentication factors:
+                <ol type="i">
+                    <li>Knowledge: Password, PIN, Passphrase</li>
+                    <li>Possession: ID, cards, smart card</li>
+                    <li>Inherence: Biometrics</li>
+                </ol>
+            </li>
+            <li>Authorization: It involves the things that the user is allowed to do. It refers to permission. Once you
+                are logged in,
+                authorization means to check what files the user is allowed to access. For example, an accountant may be
+                authorized to
+                only work with spreadsheet files from a computer.</li>
+            <li>Accountability: Accountability means responsibility. It ensures that authenticated people do authorized
+                activity. System
+                log record information which can be used to check accountability of a personnel.</li>
+        </ol>
+
+        <p>Access Control can be classified into four different models:</p>
+
+        <ol>
+            <li>Mandatory Access Controls (MACs): In this model, the access controls are defined by a central authority.
+                The access is
+                based on the policies defined by the authority. For example, in the military system, data is classified
+                as Confidential,
+                Secret or Top secret.</li>
+            <li>Discretionary Access Control (DAC): In this model, the owner of the resources determines the access to
+                the resources.
+                Example, a user folder where the administrator privilege belongs to only the user.</li>
+            <li>Role Based Access Control (RBAC): In this model, access is granted based on the personnel roles. The
+                role or position
+                determines the access rights. For example, an accountant only gets financial data, nothing else.</li>
+            <li>Attribute Based Access Control (ABAC): In this model, the decision for access rights is determined based
+                on various
+                factors such as user identity, device, type, location, time of access and resource sensitivity. It is a
+                highly flexible
+                model. Example, allowing HR employees to access a particular computer in a particular room, which
+                contains selective
+                files only to work with for office hours only.</li>
+        </ol>
+
+        <p>The key features of Identity and Access Control systems are:</p>
+
+        <ul>
+            <li>Authentication</li>
+            <li>Role-based Access Control</li>
+            <li>Principle of Least Privilege</li>
+            <li>Regular Audits</li>
+            <li>Directory services:Maintaining centralized repository of user identities</li>
+        </ul>
+
+        <h2>Defensive Security Practices</h2>
+
+        <h3>Passwords</h3>
+        <p>One of the simplest yet most effective ways to protect your online accounts is to use strong, unique
+            passwords. Avoid
+            using easily guessable passwords. Instead, use a combination of letters, numbers, and symbols, and change
+            your passwords
+            regularly. You can use a password manager to store your passwords. Additionally, enable 2FA wherever
+            possible to add an
+            extra layer of security.</p>
+
+        <h3>Up-to-date software</h3>
+        <p>Software frequently releases updates to patch security vulnerabilities. Failing to update your software,
+            operating
+            system, or applications can leave you exposed to cyber threats. Turn on automatic updates to ensure you're
+            always
+            running the latest, most secure versions.</p>
+
+        <h3>Network monitoring</h3>
+        <p>Regularly monitor your network for unusual activity. Intrusion detection systems (IDS) and intrusion
+            prevention systems
+            (IPS) can help identify and block potential threats before they cause damage.</p>
+
+        <h3>Firewalls</h3>
+        <p>Firewalls act as a barrier between your internal network and the outside world, blocking malicious traffic
+            from
+            entering. Implement both software and hardware firewalls to ensure comprehensive protection. Firewalls help
+            secure your
+            devices and network from unauthorised access and potential cyberattacks.</p>
+
+        <h3>Backups</h3>
+        <p>In the event of a ransomware attack or data loss, having regular backups can save you from losing valuable
+            information.
+            Make sure to back up your data to secure, offsite storage to ensure it can be recovered in case of an
+            attack.</p>
+
+        <h3>Awareness</h3>
+        <p>Human error is one of the biggest risks to cybersecurity. It is necessary to aware your friends and family
+            about the
+            potential cyber threats they can be exposed to and necessary defensive measures to implement.</p>
+    </div>
+</body>
+
+</html>
